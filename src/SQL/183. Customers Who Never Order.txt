@@ -1,0 +1,15 @@
+# Write your MySQL query statement below
+SELECT name as Customers 
+FROM 
+    Customers
+WHERE 
+    id not in 
+    (
+        SELECT Customers.id 
+        FROM 
+            Customers JOIN Orders 
+        ON 
+            Customers.id = Orders.customerId
+                 
+    )
+    

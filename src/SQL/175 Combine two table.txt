@@ -1,0 +1,17 @@
+# Write your MySQL query statement below
+
+    
+    
+# select firstName, lastName, city, state from Person p, Address a where p.personId = a.personId
+# UNION
+# select firstName, lastName, null as city, null as state from Person p where 
+# p.personId not in (select personId from Address);    
+
+
+SELECT firstName, lastName, city , state FROM Person P JOIN Address A ON P.personId =A.personId
+ UNION
+SELECT firstName, lastName, null as city ,null as state FROM Person p
+WHERE 
+    P.personId not in ( select personId from Address);
+ 
+ 
